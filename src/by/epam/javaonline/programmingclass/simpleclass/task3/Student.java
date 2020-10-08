@@ -4,69 +4,62 @@ public class Student {
 
 	private String lastName;
 	private String firstName;
-	private String middleName;
 	private int groupNumber;
-	private int[] raiting = new int[5];
+	private int academicPerfomance;
 
 	public Student() {
 		this.lastName = null;
 		this.firstName = null;
-		this.middleName = null;
 		this.groupNumber = 0;
-		this.raiting = null;
 	}
 
-	public Student(String lastName, String firstName, String middleName) {
+	public Student(String lastName, String firstName) {
 		this.lastName = lastName;
 		this.firstName = firstName;
-		this.middleName = middleName;
 	}
 
-	public Student(String lastName, String firstName, String middleName, int groupNumber) {
+	public Student(String lastName, String firstName, int groupNumber) {
 		this.lastName = lastName;
 		this.firstName = firstName;
-		this.middleName = middleName;
 		this.groupNumber = groupNumber;
+	}
+	
+	public Student(String lastName, String firstName, int groupNumber, int academicPerfomance) {
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.groupNumber = groupNumber;
+		this.academicPerfomance = academicPerfomance;
 	}
 
 	public String getLastName() {
 		return this.lastName;
 	}
-
+	
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
 	public String getFirstName() {
 		return this.firstName;
 	}
-
-	public String getMiddleName() {
-		return this.middleName;
+	
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-
-	public void setGroupNumber(int groupNumber) {
-		this.groupNumber = groupNumber;
-	}
-
+	
 	public int getGroupNumber() {
 		return this.groupNumber;
 	}
-
-	public void setRaiting(int[] raiting) {
-		this.raiting = raiting;
+	
+	public void setGroupNumber(int groupNumber) {
+		this.groupNumber = groupNumber;
+	}
+	
+	public int getAcademicPerfomance() {
+		return academicPerfomance;
 	}
 
-	public int[] getRaiting() {
-		return this.raiting;
-	}
-
-	public void findExcellentStudents() {
-		int counter = 0;
-		for (int i : this.raiting) {
-			if (i > 8) {
-				counter++;
-				if(counter==raiting.length) {
-					System.out.println(
-						this.lastName + "\t\t" + this.firstName + "\t\t" + this.middleName + "\t\t" + this.groupNumber);
-				}				
-			}
-		}
+	public void setAcademicPerfomance(int academicPerfomance) {
+		this.academicPerfomance = academicPerfomance;
 	}
 }
